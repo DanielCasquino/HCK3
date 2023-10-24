@@ -70,8 +70,20 @@ public class Course {
         this.vrGroup = vrGroup;
     }
 
+    public Course() {
+    }
+
+    public Course(Long id, String name, Integer credits, String code, String hrGroup, Integer cycle, String vrGroup) {
+        this.id = id;
+        this.name = name;
+        this.credits = credits;
+        this.code = code;
+        this.hrGroup = hrGroup;
+        this.cycle = cycle;
+        this.vrGroup = vrGroup;
+    }
+
     public void setHours(String a, String b, Integer c) {
 
     }
-
 }

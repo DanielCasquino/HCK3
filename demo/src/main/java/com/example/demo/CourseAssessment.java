@@ -2,6 +2,7 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 
+@Entity(name = "courseassessment")
 public class CourseAssessment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,6 +68,9 @@ public class CourseAssessment {
 
     public void setNomenclature(String nomenclature) {
         this.nomenclature = nomenclature;
+    }
+
+    public CourseAssessment() {
     }
 
     public CourseAssessment(Long id, Course course, Period period, String title, String markingType,

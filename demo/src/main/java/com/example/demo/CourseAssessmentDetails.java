@@ -2,6 +2,7 @@ package com.example.demo;
 
 import jakarta.persistence.*;
 
+@Entity(name = "courseassessmentdetails")
 public class CourseAssessmentDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
