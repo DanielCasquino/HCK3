@@ -1,15 +1,15 @@
-package com.example.demo;
+package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
-@Entity(name = "student")
-public class Student {
+@Entity(name = "period")
+public class Period {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
-    private String email;
+
     private String code;
 
     public Long getId() {
@@ -28,14 +28,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getCode() {
         return this.code;
     }
@@ -44,13 +36,12 @@ public class Student {
         this.code = code;
     }
 
-    public Student() {
+    public Period() {
     }
 
-    public Student(Long id, String name, String email, String code) {
+    public Period(Long id, String name, String code) {
         this.id = id;
         this.name = name;
-        this.email = email;
         this.code = code;
     }
 }

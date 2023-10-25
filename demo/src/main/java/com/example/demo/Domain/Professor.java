@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
 @Entity(name = "professor")
 public class Professor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;

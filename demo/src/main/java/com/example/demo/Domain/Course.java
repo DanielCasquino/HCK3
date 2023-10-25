@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
 @Entity(name = "course")
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private Integer credits;
@@ -81,9 +81,5 @@ public class Course {
         this.hrGroup = hrGroup;
         this.cycle = cycle;
         this.vrGroup = vrGroup;
-    }
-
-    public void setHours(String a, String b, Integer c) {
-
     }
 }
