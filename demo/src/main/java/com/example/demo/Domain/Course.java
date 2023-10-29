@@ -12,6 +12,9 @@ public class Course {
     private String code;
     private String hrGroup;
     private Integer cycle;
+
+    @ManyToOne
+    private CourseType courseType;
     private String vrGroup;
 
     public Long getId() {

@@ -1,5 +1,7 @@
 package com.example.demo.Domain;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Entity(name = "courseassessmentdetails")
@@ -9,8 +11,14 @@ public class CourseAssessmentDetails {
     private Long id;
     private String score;
     private String section;
-    private Student student;
+
+    @ManyToMany
+    private Set<Student> student;
+
+    @ManyToOne
     private Professor professor;
+
+    @OneToOne
     private CourseAssessment courseAssessment;
     private String sectionGroup;
 
@@ -38,11 +46,11 @@ public class CourseAssessmentDetails {
         this.section = section;
     }
 
-    public Student getStudent() {
+    public Set<Student> getStudent() {
         return this.student;
     }
 
-    public void setStudent(Student student) {
+    public void setStudent(Set<Student> student) {
         this.student = student;
     }
 
@@ -73,7 +81,7 @@ public class CourseAssessmentDetails {
     public CourseAssessmentDetails() {
     }
 
-    public CourseAssessmentDetails(Long id, String score, String section, Student student, Professor professor,
+    public CourseAssessmentDetails(Long id, String score, String section, Set<Student> student, Professor professor,
             CourseAssessment courseAssessment, String sectionGroup) {
         this.id = id;
         this.score = score;

@@ -7,6 +7,8 @@ public class CourseAssessment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @OneToOne
     private Course course;
     private Period period;
     private String title;
