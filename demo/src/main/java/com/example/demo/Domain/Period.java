@@ -2,10 +2,11 @@ package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
-@Entity(name = "period")
+@Entity
+@Table(name = "period")
 public class Period {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;

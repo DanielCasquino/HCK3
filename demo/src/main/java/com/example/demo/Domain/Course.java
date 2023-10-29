@@ -2,10 +2,11 @@ package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
-@Entity(name = "course")
+@Entity
+@Table(name = "course")
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Integer credits;
@@ -13,7 +14,7 @@ public class Course {
     private String hrGroup;
     private Integer cycle;
 
-    @ManyToOne
+    @OneToOne
     private CourseType courseType;
     private String vrGroup;
 

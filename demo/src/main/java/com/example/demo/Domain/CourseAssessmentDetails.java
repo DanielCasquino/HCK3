@@ -1,21 +1,20 @@
 package com.example.demo.Domain;
 
-import java.util.Set;
-
 import jakarta.persistence.*;
 
-@Entity(name = "courseassessmentdetails")
+@Entity
+@Table(name = "courseassessmentdetails")
 public class CourseAssessmentDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String score;
     private String section;
 
-    @ManyToMany
-    private Set<Student> student;
+    @OneToOne
+    private Student student;
 
-    @ManyToOne
+    @OneToOne
     private Professor professor;
 
     @OneToOne
@@ -46,11 +45,11 @@ public class CourseAssessmentDetails {
         this.section = section;
     }
 
-    public Set<Student> getStudent() {
+    public Student getStudent() {
         return this.student;
     }
 
-    public void setStudent(Set<Student> student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
 
@@ -81,7 +80,7 @@ public class CourseAssessmentDetails {
     public CourseAssessmentDetails() {
     }
 
-    public CourseAssessmentDetails(Long id, String score, String section, Set<Student> student, Professor professor,
+    public CourseAssessmentDetails(Long id, String score, String section, Student student, Professor professor,
             CourseAssessment courseAssessment, String sectionGroup) {
         this.id = id;
         this.score = score;

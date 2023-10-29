@@ -2,10 +2,11 @@ package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
-@Entity(name = "coursetype")
+@Entity
+@Table(name = "coursetype")
 public class CourseType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;

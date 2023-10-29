@@ -13,31 +13,30 @@ import com.example.demo.Service.CourseAssessmentDetailsService;
 @RequestMapping("/course_assessment_details")
 public class CourseAssessmentDetailsController {
     @Autowired
-    private CourseAssessmentDetailsService service;
+    private CourseAssessmentDetailsService serv;
 
     @GetMapping("")
     public ResponseEntity<List<CourseAssessmentDetails>> read() {
-        return service.read();
+        return serv.read();
     }
 
-    // @GetMapping("/{id}")
-    // public ResponseEntity<> search(@PathVariable Long id) {
-    // return service.search(id);
-    // }
+    @GetMapping("/{id}")
+    public ResponseEntity<CourseAssessmentDetails> search(@PathVariable Long id) {
+        return serv.readSpecific(id);
+    }
 
-    // @PostMapping
-    // public ResponseEntity<> create(@RequestBody CourseAssessmentDetails data) {
-    // return service.create(data);
-    // }
+    @PostMapping
+    public ResponseEntity<String> create(@RequestBody CourseAssessmentDetails data) {
+        return serv.create(data);
+    }
 
-    // @PutMapping("/{id}")
-    // public ResponseEntity<> update(@RequestBody CourseAssessmentDetails data,
-    // @PathVariable Long id) {
-    // return service.update(id, data);
-    // }
+    @PutMapping("/{id}")
+    public ResponseEntity<String> update(@RequestBody CourseAssessmentDetails data, @PathVariable Long id) {
+        return serv.update(data, id);
+    }
 
-    // @DeleteMapping("/{id}")
-    // public ResponseEntity<> delete(@PathVariable Long id) {
-    // return service.delete(id);
-    // }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        return serv.delete(id);
+    }
 }

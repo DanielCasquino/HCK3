@@ -2,14 +2,16 @@ package com.example.demo.Domain;
 
 import jakarta.persistence.*;
 
-@Entity(name = "courseassessment")
+@Entity
+@Table(name = "courseassessment")
 public class CourseAssessment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne
     private Course course;
+    @OneToOne
     private Period period;
     private String title;
     private String markingType;
