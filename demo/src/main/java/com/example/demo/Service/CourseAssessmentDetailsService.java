@@ -32,7 +32,7 @@ public class CourseAssessmentDetailsService {
 
     public ResponseEntity<String> create(CourseAssessmentDetails data) {
         repository.save(data);
-        return new ResponseEntity<String>("CAD created", HttpStatus.OK);
+        return new ResponseEntity<String>("Item created", HttpStatus.OK);
     }
 
     public ResponseEntity<String> update(CourseAssessmentDetails data, Long id) {
@@ -47,7 +47,7 @@ public class CourseAssessmentDetailsService {
             instance.setSectionGroup(data.getSectionGroup());
             instance.setStudent(data.getStudent());
             repository.save(instance);
-            return new ResponseEntity<>(null, HttpStatus.OK);
+            return new ResponseEntity<>("Item updated", HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
@@ -57,7 +57,7 @@ public class CourseAssessmentDetailsService {
         Optional<CourseAssessmentDetails> query = repository.findById(id);
         try {
             repository.delete(query.get());
-            return new ResponseEntity<>("Deleted", HttpStatus.OK);
+            return new ResponseEntity<>("Item deleted", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Object not found", HttpStatus.NOT_FOUND);
         }
