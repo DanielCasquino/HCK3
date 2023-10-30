@@ -1,0 +1,13 @@
+INSERT INTO coursetype(id, name) VALUES(1, 'Mandatory');
+INSERT INTO coursetype(id, name) VALUES(2, 'Optional');
+
+INSERT INTO course(id, code, credits, cycle, hr_group, name, vr_group, course_type_id) VALUES(1, 'CS2031', 4, 3, 'hrGroup', 'Desarrollo Basado en Plataformas', 'vrGroup', 1);
+INSERT INTO course(id, code, credits, cycle, hr_group, name, vr_group, course_type_id) VALUES(2, 'CC1123', 4, 2, 'hrGroup', 'Optica y Ondas', 'vrGroup', 1);
+
+INSERT INTO period(id, code, name) VALUES(1, '2023-2', 'Pregrado2023-2');
+
+INSERT INTO student(id, code, email, name) VALUES(1, '202510056', 'pepito.pepaso@utec.edu.pe', 'Pepito');
+INSERT INTO professor(id, email, full_name, last_name, name) VALUES(1, 'profe.prosor@utec.edu.pe', 'Profe Prosor', 'Prosor', 'Profe');
+
+INSERT INTO courseassessment(id, marking_number, marking_type, nomenclature, title, course_id, period_id) VALUES(1, 'markingNumber', 'markingType', 'nomenclature', 'Asesoria DBP', 1, 1);
+INSERT INTO courseassessment(id, marking_number, marking_type, nomenclature, title, course_id, period_id) VALUES(2, 'markingNumber', 'markingType', 'nomenclature', 'Asesoria Optica', 2, 1);
