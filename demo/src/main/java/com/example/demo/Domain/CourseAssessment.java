@@ -9,9 +9,9 @@ public class CourseAssessment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Course course;
-    @OneToOne
+    @ManyToOne
     private Period period;
     private String title;
     private String markingType;

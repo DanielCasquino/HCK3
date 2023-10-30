@@ -14,7 +14,7 @@ public class Course {
     private String hrGroup;
     private Integer cycle;
 
-    @OneToOne
+    @ManyToOne
     private CourseType courseType;
     private String vrGroup;
 
